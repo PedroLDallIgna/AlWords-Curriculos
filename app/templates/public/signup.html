@@ -1,0 +1,54 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}
+Cadastramento
+{% endblock title %}
+
+{% block main %} 
+<div class="form-content">
+    <form action="/auth" method="post" class="forms">
+        {{ form.csrf_token }}
+        <legend>Cadastro</legend>
+        <div class="field">
+            {{ form.name.label }}
+            {{ form.name(size=20, placeholder="Insira seu nome") }}
+        </div>
+        <div class="field">
+            {{ form.last_name.label }}
+            {{ form.last_name(size=30, placeholder="Insira seu sobrenome") }}
+        </div>
+        <div class="field">
+            {{ form.email.label }}
+            {{ form.email(size=40, placeholder="Insira seu email") }}
+        </div>
+        <div class="field">
+            {{ form.password.label }}
+            {{ form.password(size=20, placeholder="Insira uma senha") }}
+        </div>
+        <div class="column">
+            <div class="field">
+                {{ form.phone.label }}
+                {{ form.phone(size=11, placeholder="Insira seu telefone") }}
+            </div>
+            <div class="field">
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" placeholder="Insira seu CEP" />
+            </div>
+        </div>
+        <div class="column">
+            <div class="field">
+                {{ form.sex.label }}
+                {{ form.sex }}
+            </div>
+            <div class="field">
+                <label for="newsletter">Novidades</label>
+                <input type="checkbox" id="newsletter" />
+                <small>Desejo receber novidades</small>
+            </div>
+        </div>
+        <div class="footer">
+            {{ form.submit(class="button") }}
+        </div>
+    </form>
+</div>
+{% endblock main %}

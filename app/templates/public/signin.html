@@ -1,0 +1,24 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}
+Entrar
+{% endblock title %}
+
+{% block main %} 
+<div class="form-content">
+    <form action="/auth" method="post" class="forms">
+        {{ form.csrf_token }}
+        <div class="field">
+            {{ form.email.label }}
+            {{ form.email(size=40, placeholder='Insira sua senha') }}
+        </div>
+        <div class="field">
+            {{ form.password.label }}
+            {{ form.password(size=20, placeholder='Insira sua senha') }}
+        </div>
+        <div class="footer">
+            {{ form.submit(class="button") }}
+        </div>
+    </form>
+</div>
+{% endblock main %}
