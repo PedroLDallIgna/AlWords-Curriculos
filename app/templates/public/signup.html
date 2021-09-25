@@ -1,7 +1,7 @@
 {% extends "public/templates/public_template.html" %}
 
 {% block title %}
-Cadastramento
+Cadastro
 {% endblock title %}
 
 {% block main %} 
@@ -9,6 +9,7 @@ Cadastramento
     <form action="/auth" method="post" class="forms">
         {{ form.csrf_token }}
         <legend>Cadastro</legend>
+        <hr>
         <div class="field">
             {{ form.name.label }}
             {{ form.name(size=20, placeholder="Insira seu nome") }}
@@ -31,23 +32,24 @@ Cadastramento
                 {{ form.phone(size=11, placeholder="Insira seu telefone") }}
             </div>
             <div class="field">
-                <label for="cep">CEP:</label>
-                <input type="text" id="cep" placeholder="Insira seu CEP" />
-            </div>
-        </div>
-        <div class="column">
-            <div class="field">
                 {{ form.sex.label }}
                 {{ form.sex }}
+            </div>
+        </div>
+        <!-- <div class="column">
+            <div class="field">
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" placeholder="Insira seu CEP" />
             </div>
             <div class="field">
                 <label for="newsletter">Novidades</label>
                 <input type="checkbox" id="newsletter" />
                 <small>Desejo receber novidades</small>
             </div>
-        </div>
+        </div> -->
         <div class="footer">
             {{ form.submit(class="button") }}
+            <p>Já tem uma conta? Então entre por <a href="/signin">aqui</a>.</p>
         </div>
     </form>
 </div>
