@@ -18,10 +18,13 @@ Entrar
             {{ form.password.label }}
             {{ form.password(size=20, placeholder='Insira sua senha') }}
         </div>
-        <div class="footer">
+        <div class="form-footer">
             {{ form.submit(class="button") }}
             <p>Ainda não tem uma conta? Então crie uma <a href="/signup">aqui</a>.</p>
         </div>
     </form>
+</div>
+<div class="right-space">
+    <img src="{{ url_for('static', filename='public/assets/images/tiago-mazzutti.png') }}" alt="">
 </div>
 {% endblock main %}

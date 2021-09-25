@@ -10,44 +10,59 @@ Cadastro
         {{ form.csrf_token }}
         <legend>Cadastro</legend>
         <hr>
-        <div class="field">
-            {{ form.name.label }}
-            {{ form.name(size=20, placeholder="Insira seu nome") }}
-        </div>
-        <div class="field">
-            {{ form.last_name.label }}
-            {{ form.last_name(size=30, placeholder="Insira seu sobrenome") }}
-        </div>
-        <div class="field">
-            {{ form.email.label }}
-            {{ form.email(size=40, placeholder="Insira seu email") }}
-        </div>
-        <div class="field">
-            {{ form.password.label }}
-            {{ form.password(size=20, placeholder="Insira uma senha") }}
-        </div>
-        <div class="column">
-            <div class="field">
-                {{ form.phone.label }}
-                {{ form.phone(size=11, placeholder="Insira seu telefone") }}
+        <div class="block-fields">
+            <div class="right-fields">
+                <div class="field">
+                    {{ form.name.label }}
+                    {{ form.name(size=20, placeholder="Insira seu nome") }}
+                </div>
+                <div class="field">
+                    {{ form.email.label }}
+                    {{ form.email(size=40, placeholder="Insira seu email") }}
+                </div>
+                <div class="field">
+                    {{ form.password.label }}
+                    {{ form.password(size=20, placeholder="Insira uma senha") }}
+                </div>
+                <div class="column">
+                    <div class="field">
+                        {{ form.phone.label }}
+                        {{ form.phone(size=11, placeholder="Insira seu telefone") }}
+                    </div>
+                    <div class="field">
+                        {{ form.sex.label }}
+                        {{ form.sex }}
+                    </div>
+                </div>
             </div>
-            <div class="field">
-                {{ form.sex.label }}
-                {{ form.sex }}
+            <!-- <div class="between"></div> -->
+            <div class="left-fields">
+                <div class="field">
+                    {{ form.last_name.label }}
+                    {{ form.last_name(size=30, placeholder="Insira seu sobrenome") }}
+                </div>
+                <div class="field">
+                    {{ form.confirm_email.label }}
+                    {{ form.confirm_email(size=40, placeholder="Confirme seu email") }}
+                </div>
+                <div class="field">
+                    {{ form.confirm_password.label }}
+                    {{ form.confirm_password(size=20, placeholder="Confirme sua senha") }}
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" placeholder="Insira seu CEP" />
+                    </div>
+                    <div class="field">
+                        <label for="newsletter">Novidades</label>
+                        <input type="checkbox" id="newsletter" />
+                        <small>Desejo receber novidades</small>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- <div class="column">
-            <div class="field">
-                <label for="cep">CEP:</label>
-                <input type="text" id="cep" placeholder="Insira seu CEP" />
-            </div>
-            <div class="field">
-                <label for="newsletter">Novidades</label>
-                <input type="checkbox" id="newsletter" />
-                <small>Desejo receber novidades</small>
-            </div>
-        </div> -->
-        <div class="footer">
+        <div class="form-footer">
             {{ form.submit(class="button") }}
             <p>Já tem uma conta? Então entre por <a href="/signin">aqui</a>.</p>
         </div>
