@@ -10,13 +10,19 @@ Entrar
         {{ form.csrf_token }}
         <legend>Entrar</legend>
         <hr>
-        <div class="field">
+        <div class="signin-field field">
             {{ form.email.label }}
             {{ form.email(size=40, placeholder='Insira seu email') }}
+            {% for message in form.email.errors %}
+                <p>{{ message }}</p>
+            {% endfor %}
         </div>
-        <div class="field">
+        <div class="signin-field field">
             {{ form.password.label }}
             {{ form.password(size=20, placeholder='Insira sua senha') }}
+            {% for message in form.password.errors %}
+                <p>{{ message }}</p>
+            {% endfor %}
         </div>
         <div class="form-footer">
             {{ form.submit(class="button") }}

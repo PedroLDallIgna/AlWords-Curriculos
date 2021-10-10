@@ -56,7 +56,20 @@ body {
   margin: 10px 0;
   /* box-shadow: inset 1px 1px 3px #d1d1d1; */
   padding: 5px;
+  /* width: 50%; */
   /* border-radius: 5px; */
+}
+
+.signin-field {
+  /* margin: 10px 0; */
+  /* box-shadow: inset 1px 1px 3px #d1d1d1; */
+  /* padding: 5px; */
+  width: 100%;
+  /* border-radius: 5px; */
+}
+
+.signup-field {
+  width: 50%;
 }
 
 .field label {
@@ -64,7 +77,7 @@ body {
   font-size: 1.3em;
   font-weight: bold;
   color: #393939;
-  text-align: center;
+  /* text-align: center; */
   margin-bottom: 5px;
   /* cursor: pointer; */
 }
@@ -90,9 +103,10 @@ body {
 }
 
 .column {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
+  width: 50%;
 }
 
 .column .field {
@@ -162,4 +176,6 @@ body {
 hr {
   border-color: #9A9A9A;
   border-style: solid;
+  background-color: #9A9A9A;
+  height: 0.1vh;
 }
