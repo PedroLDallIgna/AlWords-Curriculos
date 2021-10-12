@@ -1,5 +1,5 @@
 from flask.templating import render_template
-from app import app
+from app import app, db
 from app.forms import SignIn, SignUp
 from flask import flash, request
 
@@ -21,3 +21,17 @@ def signin():
 def signup():
     form = SignUp()
     return render_template("public/signup.html", form=form)
+
+@app.route('/regist', methods=['POST', 'GET'])
+def regist():
+    user = {
+        '_id': '001',
+        'name': request.form['name'],
+        'lastname': request.form['last_name'],
+        'email': request.form['email'],
+        'password': request.form['password'],
+        'phone': request.form['phone'],
+        'sex': request.form['sex'],
+    }
+    db.update_db(user)
+    return render_template('public/index.html', title='Hello World')
