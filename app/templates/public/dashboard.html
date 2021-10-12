@@ -1,0 +1,11 @@
+{% extends 'public/templates/public_template.html' %}
+
+{% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='public/css/navbar.css') }}"> {% endblock css %}
+
+{% block title %}Dashboard{% endblock title%}
+
+{% block main %}
+    <h1>Olá, {{ active_user['name'] }}</h1>
+    <a href="/{{ active_user['_id'] }}/profile"><button>Perfil</button></a>
+    <a href="{{ url_for('signout') }}"><button>Sair</button></a>
+{% endblock main %}

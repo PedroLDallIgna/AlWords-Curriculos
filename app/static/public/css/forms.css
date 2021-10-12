@@ -144,7 +144,7 @@ body {
 	/* background-color: rgb(156, 196, 240); */
   background-color: #26aaa3;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
   padding: 5px 0;
 	/* padding: 5px 10%; */
@@ -156,9 +156,9 @@ body {
 }
 
 .logo {
-  margin-left: 10vw;
+  /* margin-left: 10vw; */
 	cursor: pointer;
-	height: 50px;
+	height: 70px;
 }
 
 .block-fields {

@@ -1,0 +1,12 @@
+{% extends 'public/templates/public_template.html' %}
+
+{% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='public/css/navbar.css') }}"> {% endblock css %}
+
+{% block title %}{{ user['name']}} {{ user['lastname']}} | Profile{% endblock title%}
+
+{% block main %}
+    <h1>{{ user['name'] }} {{ user['lastname'] }}</h1>
+    {% if condition %}
+        <a href="/{{ condition }}/profile/edit"><button>Editar Perfil</button></a>
+    {% endif %}
+{% endblock main %}

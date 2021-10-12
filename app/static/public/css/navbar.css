@@ -1,0 +1,20 @@
+.navbar {
+	/* background-color: rgb(156, 196, 240); */
+  background-color: #26aaa3;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  padding: 5px 0;
+	/* padding: 5px 10%; */
+  position: sticky;
+  /* width: 100%; */
+  top: 0;
+  /* left: 0; */
+  margin-bottom: 3vh;
+}
+
+.logo {
+  margin-left: 10vw;
+	cursor: pointer;
+	height: 50px;
+}

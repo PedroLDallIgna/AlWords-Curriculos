@@ -14,5 +14,8 @@ class DB():
         users_updated = self.get_db()
         users_updated.append(to_update)
         with open(self.filename, 'w') as write_file:
-            json.dump(users_updated, write_file)
+            json.dump(users_updated, write_file, indent=4)
         return 'ok'
+
+    def get_users(self):
+        return [user['_id'] for user in self.get_db()]

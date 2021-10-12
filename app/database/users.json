@@ -1,1 +1,20 @@
-[]
+[
+    {
+        "_id": "00001",
+        "name": "Pedro Lucas",
+        "lastname": "Dall' Igna",
+        "email": "abc@abc.com",
+        "password": "1234",
+        "phone": "54999999999",
+        "sex": "M"
+    },
+    {
+        "_id": "00101",
+        "name": "Mateus",
+        "lastname": "Marchesan",
+        "email": "mateus@mail.com",
+        "password": "12345",
+        "phone": "49988888888",
+        "sex": "M"
+    }
+]
