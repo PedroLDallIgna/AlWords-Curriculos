@@ -8,8 +8,7 @@
     <!-- <form action="{{ url_for('save_changes') }}" method="post"> -->
     <form action="/save-changes" method="post">
         <h1>{{ user['name'] }} {{ user['lastname'] }}</h1>
-        <p style="display: none;" id="descricao">{{ user_data['description'] }}</p>
-        {{ form.description.label }} {{ form.description(size=300, id="desc") }}
+        {{ form.description.label }} {{ form.description(value=user_data['description'], size=300, id="desc") }}
         <br>
         {{ form.facebook.label }} {{ form.facebook(value=user_data['social_media']['facebook']) }}
         <br>
@@ -24,10 +23,9 @@
         <input type="submit" value="Salvar">
 
         <script>
-            let desc_text = window.document.getElementById('descricao');
             let desc = window.document.getElementById('desc');
 
-            desc.value = desc_text.textContent;
+            desc.value = desc.getAttribute('value');
         </script>
     </form>
 {% endblock main %}

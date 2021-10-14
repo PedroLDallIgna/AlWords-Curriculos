@@ -1,0 +1,87 @@
+body {
+    /* background: linear-gradient(180deg, #3ce2ab 0%, #1f584f 100%); */
+    background-size: 100%;
+    margin: 0;
+    height: 100%;
+    /* font-family: "Open Sans", sans-serif; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.main-content {
+    /* display: flex;
+    justify-content: center; */
+    /* border: 5px solid lightgrey; */
+    border-radius: 15px;
+    width: 45vw;
+    /* height: 200vh; */
+    margin: 0 auto;
+    padding: 20px 30px 40px 30px;
+    box-shadow: 0 0 1em grey;
+}
+
+.user-information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.user-information p {
+    width: 35%;
+    text-align: right;
+    margin-right: 30px;
+}
+
+.space {
+    width: 2px;
+    height: 80px;
+    background-color: grey;
+}
+
+.dados {
+    width: 55%;
+    margin-left: 30px;
+}
+
+.user-card {
+    /* border: 1px solid black; */
+    box-shadow: 0 0 1em grey;
+    border-radius: 10px;
+    width: 260px;
+    height: 350px;
+    position: fixed;
+    left: 2vw;
+    top: calc(49vh - 175px);
+    text-align: center;
+    /* display: flex;
+    align-items: center; */
+    background-image: linear-gradient(to bottom, #26aaa3 20%, white 45%);
+}
+
+.user-img {
+    border-radius: 50%;
+    border: 5px solid white;
+    width: 100px;
+    height: 100px;
+    margin-top: 2vh;
+}
+
+.social {
+    /* text-align: left;
+    border: 1px solid black;
+    width: 100px;
+    margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+}
+
+.social .centralized {
+    display: block;
+    text-align: left;
+}
+
+#social-media-icon {
+    width: 20px;
+    height: 20px;
+}

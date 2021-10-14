@@ -3,10 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Home</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='public/css/index.css')}}">
+    <title>AlWords</title>
 </head>
 <body>
-    <h1>{{ title }}</h1>
+    <header class="navbar">
+        <a href="/"><img class="logo" src="{{ url_for('static', filename='public/assets/images/logo.png') }}"></a>
+    </header>
+    <div>
+        <img src="{{ url_for('static', filename='public/assets/images/back-landpage.jpg') }}" alt="handshake"  class="back-img">
+    </div>
+    <div class="front">
+        <div class="centralized"></div>
+        <p>Bem-Vindo!</p>
+        <br>
+        <a href="{{ url_for('signin') }}"><button>Entrar</button></a>
+        <a href="{{ url_for('signup') }}"><button>Cadastrar</button></a>
+    </div>
 </body>
 </html>

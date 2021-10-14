@@ -1,28 +1,100 @@
 {% extends 'public/templates/public_template.html' %}
 
-{% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='public/css/navbar.css') }}"> {% endblock css %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='public/css/navbar.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='public/css/profile.css') }}">
+{% endblock css %}
 
 {% block title %}{{ user['name']}} {{ user['lastname']}} | Profile{% endblock title%}
 
 {% block main %}
     <!-- <h1>{{ user['name'] }} {{ user['lastname'] }}</h1> -->
-    <div class="person-card">
+    <div class="user-card">
+        <img src="{{ url_for('static', filename='public/assets/images/tiago-mazzutti.png') }}" alt="" class="user-img">
         <p>{{ user['name'] }} {{ user['lastname'] }}</p>
-        {% if user_data['social_media']['facebook'] %}
-            <a href="https://facebook.com/{{ user_data['social_media']['facebook'] }}">Facebook</a>
-        {% endif %}
-        {% if user_data['social_media']['instagram'] %}
-            <a href="https://instagram.com/{{ user_data['social_media']['instagram'] }}">Instagram</a>
-        {% endif %}
-        {% if user_data['social_media']['instagram'] %}
-            <a href="https://twitter.com/{{ user_data['social_media']['twitter'] }}">Twitter</a>
-        {% endif %}
-        {% if user_data['social_media']['instagram'] %}
-        <a href="https://br.linkedin.com/in/{{ user_data['social_media']['linkedin'] }}">LinkedIn</a>
-        {% endif %}
-        {% if user_data['social_media']['instagram'] %}
-        <a href="https://github.com/{{ user_data['social_media']['github'] }}">GitHub</a>
-        {% endif %}
+        <div class="social">
+            <div class="centralized">
+                {% if user_data['social_media']['facebook'] %}
+                <img id='social-media-icon' src="{{ url_for('static', filename='public/assets/images/facebook-icon.svg')}}" alt="Facebook logo">
+                    <a href="https://facebook.com/{{ user_data['social_media']['facebook'] }}">Facebook</a>
+                    <br>
+                {% endif %}
+                {% if user_data['social_media']['instagram'] %}
+                    <img id='social-media-icon' src="{{ url_for('static', filename='public/assets/images/instagram-icon.svg')}}" alt="Instagram logo">
+                    <a href="https://instagram.com/{{ user_data['social_media']['instagram'] }}">Instagram</a>
+                    <br>
+                {% endif %}
+                {% if user_data['social_media']['twitter'] %}
+                    <img id='social-media-icon' src="{{ url_for('static', filename='public/assets/images/twitter-icon.svg')}}" alt="Twitter logo">
+                    <a href="https://twitter.com/{{ user_data['social_media']['twitter'] }}">Twitter</a>
+                    <br>
+                {% endif %}
+                {% if user_data['social_media']['linkedin'] %}
+                    <img id='social-media-icon' src="{{ url_for('static', filename='public/assets/images/linkedin-icon.svg')}}" alt="LinkedIn logo">
+                    <a href="https://br.linkedin.com/in/{{ user_data['social_media']['linkedin'] }}">LinkedIn</a>
+                    <br>
+                {% endif %}
+                {% if user_data['social_media']['github'] %}
+                    <img id='social-media-icon' src="{{ url_for('static', filename='public/assets/images/github-icon.svg')}}" alt="GitHub logo">
+                    <a href="https://github.com/{{ user_data['social_media']['github'] }}">GitHub</a>
+                    <br>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <h2>Identificação</h2>
+    <div class="user-information">
+        <p>Nome</p>
+        <div class="space"></div>
+        <div class="dados">
+            {{ user['name'] }} {{ user['lastname'] }}
+        </div>
+    </div>
+    <div class="user-information">
+        <p>Nome em citações</p>
+        <div class="space"></div>
+        <div class="dados">
+            {{ user['name'] }} {{ user['lastname'] }}
+        </div>
+    </div>
+    <h2>Endereços</h2>
+    <div class="user-information">
+        <p>Endereço profissional</p>
+        <div class="space"></div>
+        <div class="dados">
+            bla bla bla
+        </div>
+    </div>
+    <h2>Formação Acadêmica/Titulação</h2>
+    <div class="user-information">
+        <p>2010-2018</p>
+        <div class="space"></div>
+        <div class="dados">
+            bla bla bla
+        </div>
+    </div>
+    <div class="user-information">
+        <p>2019-2021</p>
+        <div class="space"></div>
+        <div class="dados">
+            bla bla bla
+        </div>
+    </div>
+    <h2>Formação Complementar</h2>
+    <div class="user-information">
+        <p>2018-2020</p>
+        <div class="space"></div>
+        <div class="dados">
+            bla bla bla
+        </div>
+    </div>
+    <h2>Atuação Profissional</h2>
+    <div class="user-information">
+        <p>2018-2020</p>
+        <div class="space"></div>
+        <div class="dados">
+            bla bla bla
+        </div>
     </div>
     {% if condition %}
         <a href="/{{ condition }}/profile/edit"><button>Editar Perfil</button></a>
