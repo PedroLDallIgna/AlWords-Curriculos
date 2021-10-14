@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, RadioField, SubmitField, SelectField
+from wtforms import StringField, PasswordField, RadioField, SubmitField, SelectField, TextAreaField
+from wtforms.fields.core import LocaleAwareNumberField
 from wtforms.fields.html5 import EmailField, TelField
 from wtforms.validators import DataRequired, EqualTo
 
@@ -19,3 +20,11 @@ class SignIn(FlaskForm):
     email = EmailField(label="Email", validators=[DataRequired("Email é um campo obrigatório!")])
     password = PasswordField(label="Senha", validators=[DataRequired("Senha é um campo obrigatório!")])
     submit = SubmitField("Entrar")
+
+class EditProfile(FlaskForm):
+    description = StringField(label='Descrição')
+    facebook = StringField(label='Facebook')
+    instagram = StringField(label='Instagram')
+    twitter = StringField(label='Twitter')
+    linkedin = StringField(label='LinkedIn')
+    github = StringField(label='GitHub')

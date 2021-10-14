@@ -5,7 +5,25 @@
 {% block title %}{{ user['name']}} {{ user['lastname']}} | Profile{% endblock title%}
 
 {% block main %}
-    <h1>{{ user['name'] }} {{ user['lastname'] }}</h1>
+    <!-- <h1>{{ user['name'] }} {{ user['lastname'] }}</h1> -->
+    <div class="person-card">
+        <p>{{ user['name'] }} {{ user['lastname'] }}</p>
+        {% if user_data['social_media']['facebook'] %}
+            <a href="https://facebook.com/{{ user_data['social_media']['facebook'] }}">Facebook</a>
+        {% endif %}
+        {% if user_data['social_media']['instagram'] %}
+            <a href="https://instagram.com/{{ user_data['social_media']['instagram'] }}">Instagram</a>
+        {% endif %}
+        {% if user_data['social_media']['instagram'] %}
+            <a href="https://twitter.com/{{ user_data['social_media']['twitter'] }}">Twitter</a>
+        {% endif %}
+        {% if user_data['social_media']['instagram'] %}
+        <a href="https://br.linkedin.com/in/{{ user_data['social_media']['linkedin'] }}">LinkedIn</a>
+        {% endif %}
+        {% if user_data['social_media']['instagram'] %}
+        <a href="https://github.com/{{ user_data['social_media']['github'] }}">GitHub</a>
+        {% endif %}
+    </div>
     {% if condition %}
         <a href="/{{ condition }}/profile/edit"><button>Editar Perfil</button></a>
     {% endif %}

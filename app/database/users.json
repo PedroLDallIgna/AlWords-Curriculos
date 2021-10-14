@@ -4,17 +4,35 @@
         "name": "Pedro Lucas",
         "lastname": "Dall' Igna",
         "email": "abc@abc.com",
-        "password": "1234",
+        "password": "abc123",
         "phone": "54999999999",
         "sex": "M"
     },
     {
-        "_id": "00101",
-        "name": "Mateus",
-        "lastname": "Marchesan",
-        "email": "mateus@mail.com",
+        "_id": "00002",
+        "name": "aaa",
+        "lastname": "aaaa",
+        "email": "aaa@aaa.com",
+        "password": "1234",
+        "phone": "549999999",
+        "sex": "M"
+    },
+    {
+        "_id": "00003",
+        "name": "pedro lucas",
+        "lastname": "dall igna",
+        "email": "pedro@mail.com",
         "password": "12345",
-        "phone": "49988888888",
+        "phone": "99999999999",
+        "sex": "M"
+    },
+    {
+        "_id": "00004",
+        "name": "aaaa",
+        "lastname": "aaaaa",
+        "email": "abc@abc.com",
+        "password": "1234",
+        "phone": "9999999999",
         "sex": "M"
     }
 ]

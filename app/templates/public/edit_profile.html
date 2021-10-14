@@ -5,6 +5,21 @@
 {% block title %}{{ user['name']}} {{ user['lastname']}} | Profile{% endblock title%}
 
 {% block main %}
-    <h1>{{ user['name'] }} {{ user['lastname'] }}</h1>
-    <a href="/{{ condition }}/profile/edit"><button>Salvar</button></a>
+    <!-- <form action="{{ url_for('save_changes') }}" method="post"> -->
+    <form action="/save-changes" method="post">
+        <h1>{{ user['name'] }} {{ user['lastname'] }}</h1>
+        {{ form.description.label }} {{ form.description(value=user_data['description'], size=300) }}
+        <br>
+        {{ form.facebook.label }} {{ form.facebook(value=user_data['social_media']['facebook']) }}
+        <br>
+        {{ form.instagram.label }} {{ form.instagram(value=user_data['social_media']['instagram']) }}
+        <br>
+        {{ form.twitter.label }} {{ form.twitter(value=user_data['social_media']['twitter']) }}
+        <br>
+        {{ form.linkedin.label }} {{ form.linkedin(value=user_data['social_media']['linkedin']) }}
+        <br>
+        {{ form.github.label }} {{ form.github(value=user_data['social_media']['github']) }}
+        <br>
+        <input type="submit" value="Salvar">
+    </form>
 {% endblock main %}
