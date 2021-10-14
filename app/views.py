@@ -22,12 +22,14 @@ def signin():
 @app.route('/auth', methods=['POST', 'GET'])
 def auth():
     # for id in db_users.get_users():
-    for user in db_users.get_db():
+    with open('app/database/users.json') as read_file:
+        users = json.load(read_file)
+    for user in users:
         if user['email'] == request.form['email'] and user['password'] == request.form['password']:
             session['user_logged'] = user
             return redirect(url_for('dashboard'))
-        else:
-            return redirect(url_for('signin'))
+        # else:
+    return redirect(url_for('signin'))
 
 @app.route('/dashboard', methods=['GET'])
 def dashboard():

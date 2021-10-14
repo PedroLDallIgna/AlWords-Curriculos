@@ -34,5 +34,14 @@
         "password": "1234",
         "phone": "9999999999",
         "sex": "M"
+    },
+    {
+        "_id": "00005",
+        "name": "aaaaaaa",
+        "lastname": "aaaaaaaa",
+        "email": "abc123@abc.com",
+        "password": "abc123",
+        "phone": "549999999999",
+        "sex": "M"
     }
 ]
