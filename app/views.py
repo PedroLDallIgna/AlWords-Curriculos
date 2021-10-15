@@ -1,6 +1,6 @@
 from flask.templating import render_template
 from app import app, db_users, users, data
-from app.forms import EditProfile, SignIn, SignUp
+from app.forms import AcademicDegree, ComplementarDegree, EditProfile, PersonalInfo, SignIn, SignUp
 from flask import flash, request, redirect, url_for, session
 import json
 
@@ -36,7 +36,7 @@ def dashboard():
     if request.method == 'GET' and not session['user_logged']:
         return redirect(url_for('signin'))
     else:
-        return render_template('public/dashboard.html', active_user=session['user_logged'])
+        return render_template('public/dashboard.html', active_user=session['user_logged'], users=db_users.get_db())
 
 @app.route('/signup', methods=['POST', 'GET'])
 def signup():
@@ -72,7 +72,11 @@ def regist():
             'twitter': "",
             'linkedin': "",
             'github': ""
-        }
+        },
+        'identity': "",
+        'address': "",
+        'academic_degree': [],
+        'complementar_degree': []
     })
     # return render_template('public/index.html', title='Hello World')
     return redirect(url_for('edit_profile', id=session['user_logged']['_id']))
@@ -91,20 +95,26 @@ def profile(id):
         if user['_user_id'] == id:
             user_data = user
             return render_template('public/profile.html', user=[user for user in db_users.get_db() if user['_id'] == id][0], condition=(id if id == session['user_logged']['_id'] else False), user_data=user_data)
-    return redirect(url_for('index'))
+    return redirect(url_for('dashboard'))
     # return render_template('public/profile.html', user=[user for user in db_users.get_db() if user['_id'] == id][0], condition=(id if id == session['user_logged']['_id'] else False), user_data=[user for user in users_data.get_db() if user['_user_id'] == id][0])
 
 @app.route('/<id>/profile/edit', methods=['POST', 'GET'])
 def edit_profile(id):
     form = EditProfile()
+    ad_form = AcademicDegree()
+    cd_form = ComplementarDegree()
+    personal_info = PersonalInfo()
     with open('app/database/users_data.json', 'r') as read_file:
         users_data = json.load(read_file)
+    # if request.method == "POST":
+    #     print(json.load(request.get_json()))
+    # # print(getJson)
     if id == session['user_logged']['_id']:
         for user in users_data:
             if user['_user_id'] == id:
                 user_data = user
                 # return render_template('public/edit_profile.html', user=[user for user in db_users.get_db() if user['_id'] == id][0], condition=id if id == session['user_logged']['_id'] else False, form=form, user_data=user_data)
-                return render_template('public/edit_profile.html', user=session['user_logged'], condition=id if id == session['user_logged']['_id'] else False, form=form, user_data=user_data)
+                return render_template('public/edit_profile.html', user=session['user_logged'], condition=id if id == session['user_logged']['_id'] else False, form=form, user_data=user_data, ad_form=ad_form, cd_form=cd_form, personal_info=personal_info)
     else:
         return redirect(url_for('profile', id=id))
 
@@ -112,6 +122,9 @@ def edit_profile(id):
 def save_changes():
     with open('app/database/users_data.json', 'r') as read_file:
         users_data = json.load(read_file)
+    # if request.method == "POST":
+    #     getJson = request.json()
+    # print(getJson)
     to_append = {
         '_user_id': session['user_logged']['_id'],
         'description': request.form['description'] if request.form['description'] else "",
@@ -121,8 +134,23 @@ def save_changes():
             'twitter': request.form['twitter'] if request.form['twitter'] else "",
             'linkedin': request.form['linkedin'] if request.form['linkedin'] else "",
             'github': request.form['github'] if request.form['github'] else ""
-        }
+        },
+        'identity': request.form['name'] + " " + request.form['last_name'],
+        'address': request.form['address'],
+        'academic_degree': [],
+        'complementar_degree': []
     }
+    print(request.form)
+    print(to_append)
+    for j in range(1, 5):
+        to_append['academic_degree'].append({
+            'interval': [request.form["ad_begin"+str(j)], request.form["ad_end"+str(j)]], 
+            "degree": request.form['ad_degree'+str(j)]
+        })
+        to_append['complementar_degree'].append({
+            'interval': [request.form["cd_begin"+str(j)], request.form["cd_end"+str(j)]], 
+            "degree": request.form['cd_degree'+str(j)]
+        })
     if len(users_data) > 0:
         for i in range(len(users_data)):
             if users_data[i]['_user_id'] == session['user_logged']['_id']:

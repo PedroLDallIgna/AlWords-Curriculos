@@ -43,5 +43,32 @@
         "password": "abc123",
         "phone": "549999999999",
         "sex": "M"
+    },
+    {
+        "_id": "00006",
+        "name": "Mateus",
+        "lastname": "Marchesan",
+        "email": "mateus@mail.com",
+        "password": "abc123",
+        "phone": "4999999999",
+        "sex": "M"
+    },
+    {
+        "_id": "00007",
+        "name": "Pedro Lucas ",
+        "lastname": "Dall' Igna",
+        "email": "pedro@mail.com",
+        "password": "123abc",
+        "phone": "54999999999",
+        "sex": "M"
+    },
+    {
+        "_id": "00008",
+        "name": "Matheus Henrique",
+        "lastname": "dos Santos Pereira",
+        "email": "matheus@mail.com",
+        "password": "abc1234",
+        "phone": "49888888888",
+        "sex": "M"
     }
 ]

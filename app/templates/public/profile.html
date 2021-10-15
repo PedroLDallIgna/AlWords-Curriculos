@@ -7,10 +7,14 @@
 
 {% block title %}{{ user['name']}} {{ user['lastname']}} | Profile{% endblock title%}
 
+{% block btn %}
+<a href="{{ url_for('dashboard') }}"><button>Dashboard</button></a>
+{% endblock btn %}
+
 {% block main %}
     <!-- <h1>{{ user['name'] }} {{ user['lastname'] }}</h1> -->
     <div class="user-card">
-        <img src="{{ url_for('static', filename='public/assets/images/tiago-mazzutti.png') }}" alt="" class="user-img">
+        <img src="{{ url_for('static', filename='public/assets/images/default-user.jpg') }}" alt="" class="user-img">
         <p>{{ user['name'] }} {{ user['lastname'] }}</p>
         <div class="social">
             <div class="centralized">
@@ -33,70 +37,71 @@
                     <img id='social-media-icon' src="{{ url_for('static', filename='public/assets/images/linkedin-icon.svg')}}" alt="LinkedIn logo">
                     <a href="https://br.linkedin.com/in/{{ user_data['social_media']['linkedin'] }}">LinkedIn</a>
                     <br>
-                {% endif %}
-                {% if user_data['social_media']['github'] %}
+                    {% endif %}
+                    {% if user_data['social_media']['github'] %}
                     <img id='social-media-icon' src="{{ url_for('static', filename='public/assets/images/github-icon.svg')}}" alt="GitHub logo">
                     <a href="https://github.com/{{ user_data['social_media']['github'] }}">GitHub</a>
                     <br>
-                {% endif %}
+                    {% endif %}
+                </div>
             </div>
-        </div>
+            {% if condition %}
+                <a href="/{{ condition }}/profile/edit"><button>Editar Perfil</button></a>
+            {% endif %}
     </div>
     <h2>Identificação</h2>
     <div class="user-information">
         <p>Nome</p>
         <div class="space"></div>
         <div class="dados">
+            <!-- {{ user_data['identity'] }} -->
             {{ user['name'] }} {{ user['lastname'] }}
         </div>
     </div>
-    <div class="user-information">
+    <!-- <div class="user-information">
         <p>Nome em citações</p>
         <div class="space"></div>
         <div class="dados">
             {{ user['name'] }} {{ user['lastname'] }}
         </div>
-    </div>
+    </div> -->
     <h2>Endereços</h2>
     <div class="user-information">
         <p>Endereço profissional</p>
         <div class="space"></div>
         <div class="dados">
-            bla bla bla
+            {{ user_data['address'] }}
         </div>
     </div>
     <h2>Formação Acadêmica/Titulação</h2>
+    {% for degree in user_data['academic_degree'] %}
+    {% if degree['degree'] != "" %}
     <div class="user-information">
-        <p>2010-2018</p>
+        <p>{{ degree['interval'][0]}}-{{ degree['interval'][1] }}</p>
         <div class="space"></div>
         <div class="dados">
-            bla bla bla
+            {{ degree['degree']}}
         </div>
     </div>
-    <div class="user-information">
+    {% endif %}
+    {% endfor %}
+    <!-- <div class="user-information">
         <p>2019-2021</p>
         <div class="space"></div>
         <div class="dados">
             bla bla bla
         </div>
-    </div>
+    </div> -->
     <h2>Formação Complementar</h2>
+    {% for degree in user_data['complementar_degree'] %}
+    {% if degree['degree'] != "" %}
     <div class="user-information">
-        <p>2018-2020</p>
+        <p>{{ degree['interval'][0]}}-{{ degree['interval'][1] }}</p>
         <div class="space"></div>
         <div class="dados">
-            bla bla bla
+            {{ degree['degree']}}
         </div>
     </div>
-    <h2>Atuação Profissional</h2>
-    <div class="user-information">
-        <p>2018-2020</p>
-        <div class="space"></div>
-        <div class="dados">
-            bla bla bla
-        </div>
-    </div>
-    {% if condition %}
-        <a href="/{{ condition }}/profile/edit"><button>Editar Perfil</button></a>
     {% endif %}
+    {% endfor %}
 {% endblock main %}

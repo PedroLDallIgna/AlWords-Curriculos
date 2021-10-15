@@ -26,6 +26,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
+    filter: blur(7px);
 }
 
 .front {
@@ -34,7 +35,6 @@ body {
     left: calc(50% - 250px);
     width: 500px;
     text-align: center;
-
 }
 
 .front p {
@@ -49,4 +49,5 @@ body {
     border-radius: 5px;
     cursor: pointer;
     padding: 5px 20px;
+    color: white;
 }

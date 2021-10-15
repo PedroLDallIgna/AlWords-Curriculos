@@ -20,8 +20,134 @@
         <br>
         {{ form.github.label }} {{ form.github(value=user_data['social_media']['github']) }}
         <br>
+        <h2>Identificação</h2>
+        {{ personal_info.name.label }} {{ personal_info.name(value=user['name']) }}
+        {{ personal_info.last_name.label }} {{ personal_info.last_name(value=user['lastname']) }}
+        <br>
+        <h2>Endereço</h2>
+        {{ personal_info.address.label }} {{ personal_info.address(value=user_data['address']) }}
+        <br>
+        <h2>Formação Acadêmica</h2>
+        {% if user_data['academic_degree'] %}
+        {{ ad_form.ad_begin1.label }}
+        {{ ad_form.ad_begin1(size=4, value=user_data['academic_degree'][0]['interval'][0]) }}
+        {{ ad_form.ad_end1.label }}
+        {{ ad_form.ad_end1(size=4, value=user_data['academic_degree'][0]['interval'][1]) }}
+        {{ ad_form.ad_degree1.label }}
+        {{ ad_form.ad_degree1(value=user_data['academic_degree'][0]['degree']) }}
+        <br>
+        {{ ad_form.ad_begin2.label }}
+        {{ ad_form.ad_begin2(size=4, value=user_data['academic_degree'][1]['interval'][0]) }}
+        {{ ad_form.ad_end2.label }}
+        {{ ad_form.ad_end2(size=4, value=user_data['academic_degree'][1]['interval'][1]) }}
+        {{ ad_form.ad_degree2.label }}
+        {{ ad_form.ad_degree2(value=user_data['academic_degree'][1]['degree']) }}
+        <br>
+        {{ ad_form.ad_begin3.label }}
+        {{ ad_form.ad_begin3(size=4, value=user_data['academic_degree'][2]['interval'][0]) }}
+        {{ ad_form.ad_end3.label }}
+        {{ ad_form.ad_end3(size=4, value=user_data['academic_degree'][2]['interval'][1]) }}
+        {{ ad_form.ad_degree3.label }}
+        {{ ad_form.ad_degree3(value=user_data['academic_degree'][2]['degree']) }}
+        <br>
+        {{ ad_form.ad_begin4.label }}
+        {{ ad_form.ad_begin4(size=4, value=user_data['academic_degree'][3]['interval'][0]) }}
+        {{ ad_form.ad_end4.label }}
+        {{ ad_form.ad_end4(size=4, value=user_data['academic_degree'][3]['interval'][1]) }}
+        {{ ad_form.ad_degree4.label }}
+        {{ ad_form.ad_degree4(value=user_data['academic_degree'][3]['degree']) }}
+        <br>
+        {% else %}
+        {{ ad_form.ad_begin1.label }}
+        {{ ad_form.ad_begin1(size=4) }}
+        {{ ad_form.ad_end1.label }}
+        {{ ad_form.ad_end1(size=4) }}
+        {{ ad_form.ad_degree1.label }}
+        {{ ad_form.ad_degree1() }}
+        <br>
+        {{ ad_form.ad_begin2.label }}
+        {{ ad_form.ad_begin2(size=4) }}
+        {{ ad_form.ad_end2.label }}
+        {{ ad_form.ad_end2(size=4) }}
+        {{ ad_form.ad_degree2.label }}
+        {{ ad_form.ad_degree2() }}
+        <br>
+        {{ ad_form.ad_begin3.label }}
+        {{ ad_form.ad_begin3(size=4) }}
+        {{ ad_form.ad_end3.label }}
+        {{ ad_form.ad_end3(size=4) }}
+        {{ ad_form.ad_degree3.label }}
+        {{ ad_form.ad_degree3() }}
+        <br>
+        {{ ad_form.ad_begin4.label }}
+        {{ ad_form.ad_begin4(size=4) }}
+        {{ ad_form.ad_end4.label }}
+        {{ ad_form.ad_end4(size=4) }}
+        {{ ad_form.ad_degree4.label }}
+        {{ ad_form.ad_degree4() }}
+        <br>
+        {% endif %}
+        <h2>Formação Complementar</h2>
+        {% if user_data['complementar_degree'] %}
+        {{ cd_form.cd_begin1.label }}
+        {{ cd_form.cd_begin1(size=4, value=user_data['complementar_degree'][0]['interval'][0]) }}
+        {{ cd_form.cd_end1.label }}
+        {{ cd_form.cd_end1(size=4, value=user_data['complementar_degree'][0]['interval'][1]) }}
+        {{ cd_form.cd_degree1.label }}
+        {{ cd_form.cd_degree1(value=user_data['complementar_degree'][0]['degree']) }}
+        <br>
+        {{ cd_form.cd_begin2.label }}
+        {{ cd_form.cd_begin2(size=4, value=user_data['complementar_degree'][1]['interval'][0]) }}
+        {{ cd_form.cd_end2.label }}
+        {{ cd_form.cd_end2(size=4, value=user_data['complementar_degree'][1]['interval'][1]) }}
+        {{ cd_form.cd_degree2.label }}
+        {{ cd_form.cd_degree2(value=user_data['complementar_degree'][1]['degree']) }}
+        <br>
+        {{ cd_form.cd_begin3.label }}
+        {{ cd_form.cd_begin3(size=4, value=user_data['complementar_degree'][2]['interval'][0]) }}
+        {{ cd_form.cd_end3.label }}
+        {{ cd_form.cd_end3(size=4, value=user_data['complementar_degree'][2]['interval'][1]) }}
+        {{ cd_form.cd_degree3.label }}
+        {{ cd_form.cd_degree3(value=user_data['complementar_degree'][2]['degree']) }}
+        <br>
+        {{ cd_form.cd_begin4.label }}
+        {{ cd_form.cd_begin4(size=4, value=user_data['complementar_degree'][3]['interval'][0]) }}
+        {{ cd_form.cd_end4.label }}
+        {{ cd_form.cd_end4(size=4, value=user_data['complementar_degree'][3]['interval'][1]) }}
+        {{ cd_form.cd_degree4.label }}
+        {{ cd_form.cd_degree4(value=user_data['complementar_degree'][3]['degree']) }}
+        <br>
+        {% else %}
+        {{ cd_form.cd_begin1.label }}
+        {{ cd_form.cd_begin1(size=4) }}
+        {{ cd_form.cd_end1.label }}
+        {{ cd_form.cd_end1(size=4) }}
+        {{ cd_form.cd_degree1.label }}
+        {{ cd_form.cd_degree1() }}
+        <br>
+        {{ cd_form.cd_begin2.label }}
+        {{ cd_form.cd_begin2(size=4) }}
+        {{ cd_form.cd_end2.label }}
+        {{ cd_form.cd_end2(size=4) }}
+        {{ cd_form.cd_degree2.label }}
+        {{ cd_form.cd_degree2() }}
+        <br>
+        {{ cd_form.cd_begin3.label }}
+        {{ cd_form.cd_begin3(size=4) }}
+        {{ cd_form.cd_end3.label }}
+        {{ cd_form.cd_end3(size=4) }}
+        {{ cd_form.cd_degree3.label }}
+        {{ cd_form.cd_degree3() }}
+        <br>
+        {{ cd_form.cd_begin4.label }}
+        {{ cd_form.cd_begin4(size=4) }}
+        {{ cd_form.cd_end4.label }}
+        {{ cd_form.cd_end4(size=4) }}
+        {{ cd_form.cd_degree4.label }}
+        {{ cd_form.cd_degree4() }}
+        <br>
+        {% endif %}
         <input type="submit" value="Salvar">
-
         <script>
             let desc = window.document.getElementById('desc');
 

@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container {
+    margin: 0 auto;
+    width: auto;
+    height: 100vh;
+    /* border: 1px solid black;
+    display: grid; */
+    grid-template-columns: 260px;
+    grid-template-rows: 350px;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+}
+
+.user-card {
+    box-shadow: 0 0 1em grey;
+    border-radius: 10px;
+    width: 260px;
+    height: 350px;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #26aaa3 20%, white 45%);
+}
+
+.user-img {
+    border-radius: 50%;
+    border: 5px solid white;
+    width: 100px;
+    height: 100px;
+    margin-top: 2vh;
+}

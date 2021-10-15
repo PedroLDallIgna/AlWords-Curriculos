@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, RadioField, SubmitField, SelectField, TextAreaField
-from wtforms.fields.html5 import EmailField, TelField
+from wtforms.fields.html5 import EmailField, TelField, IntegerField
 from wtforms.validators import DataRequired, EqualTo
 
 class SignUp(FlaskForm):
@@ -28,3 +28,36 @@ class EditProfile(FlaskForm):
     twitter = StringField(label='Twitter')
     linkedin = StringField(label='LinkedIn')
     github = StringField(label='GitHub')
+
+class PersonalInfo(FlaskForm):
+    name = StringField(label="Nome", validators=[DataRequired()])
+    last_name = StringField(label="Sobrenome", validators=[DataRequired()])
+    address = StringField(label="Endereço")
+
+class AcademicDegree(FlaskForm):
+    ad_begin1 = IntegerField(label="Ano de Início")
+    ad_end1 = IntegerField(label="Ano de Conclusão")
+    ad_degree1 = StringField(label="Formação")
+    ad_begin2 = IntegerField(label="Ano de Início")
+    ad_end2 = IntegerField(label="Ano de Conclusão")
+    ad_degree2 = StringField(label="Formação")
+    ad_begin3 = IntegerField(label="Ano de Início")
+    ad_end3 = IntegerField(label="Ano de Conclusão")
+    ad_degree3 = StringField(label="Formação")
+    ad_begin4 = IntegerField(label="Ano de Início")
+    ad_end4 = IntegerField(label="Ano de Conclusão")
+    ad_degree4 = StringField(label="Formação")
+
+class ComplementarDegree(FlaskForm):
+    cd_begin1 = IntegerField(label="Ano de Início")
+    cd_end1 = IntegerField(label="Ano de Conclusão")
+    cd_degree1 = StringField(label="Formação")
+    cd_begin2 = IntegerField(label="Ano de Início")
+    cd_end2 = IntegerField(label="Ano de Conclusão")
+    cd_degree2 = StringField(label="Formação")
+    cd_begin3 = IntegerField(label="Ano de Início")
+    cd_end3 = IntegerField(label="Ano de Conclusão")
+    cd_degree3 = StringField(label="Formação")
+    cd_begin4 = IntegerField(label="Ano de Início")
+    cd_end4 = IntegerField(label="Ano de Conclusão")
+    cd_degree4 = StringField(label="Formação")

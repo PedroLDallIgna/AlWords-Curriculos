@@ -1,11 +1,28 @@
-{% extends 'public/templates/public_template.html' %}
-
-{% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='public/css/navbar.css') }}"> {% endblock css %}
-
-{% block title %}Dashboard{% endblock title%}
-
-{% block main %}
-    <h1>Olá, {{ active_user['name'] }}</h1>
-    <a href="/{{ active_user['_id'] }}/profile"><button>Perfil</button></a>
-    <a href="{{ url_for('signout') }}"><button>Sair</button></a>
-{% endblock main %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='public/css/navbar.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='public/css/dashboard.css') }}">
+        <title>Dashboard | AlWords</title>
+    </head>
+    <body>
+        <header class="navbar">
+            <a href="/"><img class="logo" src="{{ url_for('static', filename='public/assets/images/logo.png') }}"></a>
+            <h1>Olá, {{ active_user['name'] }}</h1>
+            <a href="/{{ active_user['_id'] }}/profile"><button>Perfil</button></a>
+            <a href="{{ url_for('signout') }}"><button>Sair</button></a>
+        </header>
+        <div class="main-content">
+            <div class="grid-container">
+                {% for user in users %}
+                <div class="user-card">
+                    <img src="{{ url_for('static', filename='public/assets/images/default-user.jpg') }}" alt="" class="user-img">
+                    <p>{{ user['name'] }} {{ user['lastname'] }}</p>
+                    <a href="{{ url_for('profile', id=user['_id']) }}"><button>Ver perfil</button></a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>
