@@ -12,7 +12,6 @@
 {% endblock btn %}
 
 {% block main %}
-    <!-- <h1>{{ user['name'] }} {{ user['lastname'] }}</h1> -->
     <div class="user-card">
         <img src="{{ url_for('static', filename='public/assets/images/default-user.jpg') }}" alt="" class="user-img">
         <p>{{ user['name'] }} {{ user['lastname'] }}</p>
@@ -54,17 +53,9 @@
         <p>Nome</p>
         <div class="space"></div>
         <div class="dados">
-            <!-- {{ user_data['identity'] }} -->
             {{ user['name'] }} {{ user['lastname'] }}
         </div>
     </div>
-    <!-- <div class="user-information">
-        <p>Nome em citações</p>
-        <div class="space"></div>
-        <div class="dados">
-            {{ user['name'] }} {{ user['lastname'] }}
-        </div>
-    </div> -->
     <h2>Endereços</h2>
     <div class="user-information">
         <p>Endereço profissional</p>
@@ -85,13 +76,6 @@
     </div>
     {% endif %}
     {% endfor %}
-    <!-- <div class="user-information">
-        <p>2019-2021</p>
-        <div class="space"></div>
-        <div class="dados">
-            bla bla bla
-        </div>
-    </div> -->
     <h2>Formação Complementar</h2>
     {% for degree in user_data['complementar_degree'] %}
     {% if degree['degree'] != "" %}

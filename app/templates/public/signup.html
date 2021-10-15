@@ -13,7 +13,6 @@ Cadastro
         <legend>Cadastro</legend>
         <hr>
         <div class="block-fields">
-            <!-- <div class="right-fields"> -->
             <div class="signup-field field">
                 {{ form.name.label }}
                 {{ form.name(size=20, placeholder="Insira seu nome") }}
@@ -52,8 +51,6 @@ Cadastro
                 <label for="cep">CEP</label>
                 <input type="text" id="cep" placeholder="Insira seu CEP" />
             </div>
-            <!-- <div class="column">
-            </div> -->
         </div>
         <div class="block-fields">
             <div class="signup-field field">
@@ -65,12 +62,7 @@ Cadastro
                 <input type="checkbox" id="newsletter" />
                 <small>Desejo receber novidades</small>
             </div>
-            <!-- <div class="column">
-            </div> -->
         </div>
-            <!-- </div> -->
-            <!-- <div class="between"></div> -->
-        <!-- <div class="left-fields"></div> -->
         <div class="form-footer">
             {{ form.submit(class="button") }}
             <p>Já tem uma conta? Então entre por <a href="/signin">aqui</a>.</p>

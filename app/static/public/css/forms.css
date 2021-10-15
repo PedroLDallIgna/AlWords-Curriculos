@@ -9,18 +9,15 @@ input {
 }
 
 body {
-  /* background: linear-gradient(180deg, #3ce2ab 0%, #1f584f 100%); */
   background-size: 100%;
   margin: 0;
   height: 100%;
-  /* font-family: "Open Sans", sans-serif; */
 	font-family: 'Roboto', sans-serif;
   font-size: 14px;
 }
 
 .main-content {
   width: 70%;
-  /* border: 1px solid black; */
   margin: 0 auto;
   display: flex;
   flex: 1;
@@ -30,14 +27,9 @@ body {
 }
 
 .form-content {
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   height: 100%;
 }
 .forms {
-  /* width: 800px; */
-  /* min-height: 400px; */
   background: #fff;
   border-radius: 6px;
   padding: 20px 30px;
@@ -54,18 +46,11 @@ body {
 
 .field {
   margin: 10px 0;
-  /* box-shadow: inset 1px 1px 3px #d1d1d1; */
   padding: 5px;
-  /* width: 50%; */
-  /* border-radius: 5px; */
 }
 
 .signin-field {
-  /* margin: 10px 0; */
-  /* box-shadow: inset 1px 1px 3px #d1d1d1; */
-  /* padding: 5px; */
   width: 100%;
-  /* border-radius: 5px; */
 }
 
 .signup-field {
@@ -77,9 +62,7 @@ body {
   font-size: 1.3em;
   font-weight: bold;
   color: #393939;
-  /* text-align: center; */
   margin-bottom: 5px;
-  /* cursor: pointer; */
 }
 
 .field input:not([type="checkbox"]) {
@@ -103,9 +86,6 @@ body {
 }
 
 .column {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
   width: 50%;
 }
 
@@ -119,7 +99,6 @@ body {
 }
 
 .button {
-  /* background: #73a4dc; */
   background-color: #26aaa3;
   border-radius: 2px;
   padding: 10px 15px;
@@ -130,33 +109,21 @@ body {
 }
 
 .button:hover {
-  /* background: #5988bd; */
   background-color: #229993;
 }
 
-/* .right-space {
-  width: 300px;
-  height: 500px;
-  border: 1px solid black;
-} */
-
 .navbar {
-	/* background-color: rgb(156, 196, 240); */
   background-color: #26aaa3;
 	display: flex;
 	justify-content: center;
 	align-items: center;
   padding: 5px 0;
-	/* padding: 5px 10%; */
   position: sticky;
-  /* width: 100%; */
   top: 0;
-  /* left: 0; */
   margin-bottom: 3vh;
 }
 
 .logo {
-  /* margin-left: 10vw; */
 	cursor: pointer;
 	height: 70px;
 }

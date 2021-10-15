@@ -5,7 +5,6 @@
 {% block title %}{{ user['name']}} {{ user['lastname']}} | Profile{% endblock title%}
 
 {% block main %}
-    <!-- <form action="{{ url_for('save_changes') }}" method="post"> -->
     <form action="/save-changes" method="post">
         <h1>{{ user['name'] }} {{ user['lastname'] }}</h1>
         {{ form.description.label }} {{ form.description(value=user_data['description'], size=300, id="desc") }}

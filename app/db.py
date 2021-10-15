@@ -19,5 +19,3 @@ class DB():
 
     def get_users(self):
         return [user['_id'] for user in self.get_db()]
-
-    # def remove_data(self):  

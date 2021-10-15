@@ -10,8 +10,7 @@ class SignUp(FlaskForm):
     confirm_email = EmailField(label="Confirme o Email", validators=[DataRequired()])
     password = PasswordField(label="Senha", validators=[DataRequired("Senha é um campo obrigatório!"), EqualTo('confirm_password')])
     confirm_password = PasswordField(label="Confirme a Senha", validators=[DataRequired()])
-    sex = SelectField(label="Sexo", choices=[('M', 'Masculino'), ('F', 'Feminino')], validators=[DataRequired("Sexo é um campo obrigatório!")])
-    # sex = RadioField(label="Sexo", choices=[('M', 'Male'), ('F', 'Female')], validators=[DataRequired()])
+    sex = SelectField(label="Sexo", choices=[('M', 'Masculino'), ('F', 'Feminino'), ('H', 'Helicóptero')], validators=[DataRequired("Sexo é um campo obrigatório!")])
     phone = TelField(label="Telefone", validators=[DataRequired("Telefone é um campo obrigatório!")])
     submit = SubmitField("Cadastrar")
 
@@ -21,7 +20,6 @@ class SignIn(FlaskForm):
     submit = SubmitField("Entrar")
 
 class EditProfile(FlaskForm):
-    # description = StringField(label='Descrição')
     description = TextAreaField(label='Descrição')
     facebook = StringField(label='Facebook')
     instagram = StringField(label='Instagram')
